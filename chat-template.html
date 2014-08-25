@@ -1,11 +1,10 @@
-{% autoescape true %}
 <html>
   <head>
     <title>{{ title }}</title>
   </head>
   <body>
     <h1>Welcome to {{ title }}</h1>
-    
+    <p>Current time is {{ current_time.strftime("%Y-%m-%d %H:%M") }}</p>
 
     {% for m in msg_list %}
     <p> {{ m.user }} ( {{ m.timestamp }} ): {{ m.message|escape }} </p>
@@ -17,4 +16,3 @@
     </form>
   </body>
 </html>
-{% endautoescape %}

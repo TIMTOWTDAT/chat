@@ -54,7 +54,11 @@ class ChatRoomPage(webapp2.RequestHandler):
             template_values = {
 		'title': "TMTC's AppEngine Chat Room",
 		'msg_list': messages,
+<<<<<<< HEAD
+		
+=======
 		'current_time': current_time 
+>>>>>>> fb6bac219bbf62b2e6f818ddf892e075d5422a1d
 		}
 	    template = JINJA_ENVIRONMENT.get_template('chat-template.html')
 	    path = os.path.join(os.path.dirname(__file__), 'chat-template.html')
