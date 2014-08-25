@@ -50,10 +50,10 @@ class ChatRoomPage(webapp2.RequestHandler):
             
 	    self.response.headers['Content-Type'] = 'text/html'
 	    messages = ndb.gql("SELECT * FROM ChatMessage ORDER BY timestamp")
-	    template_values = {
+	    current_time = datetime.datetime.today() 
+            template_values = {
 		'title': "TMTC's AppEngine Chat Room",
 		'msg_list': messages,
-		
 		}
 	    template = JINJA_ENVIRONMENT.get_template('chat-template.html')
 	    path = os.path.join(os.path.dirname(__file__), 'chat-template.html')
