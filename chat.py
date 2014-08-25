@@ -53,11 +53,11 @@ class ChatRoomPage(webapp2.RequestHandler):
 	    template_values = {
 		'title': "TMTC's AppEngine Chat Room",
 		'msg_list': messages,
-		'current_time': datetime.datetime.today(),
+		
 		}
 	    template = JINJA_ENVIRONMENT.get_template('chat-template.html')
 	    path = os.path.join(os.path.dirname(__file__), 'chat-template.html')
-	    page = template.render(path, template_values)
+	    page = template.render(template_values)
 	    self.response.out.write(page)
     def post(self):
 	user = users.get_current_user()
