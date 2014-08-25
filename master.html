@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>{{ title }} </title>
+  </head>
+  <body>
+
+    {% block navbar%}
+    	<h3>Available Chats</h3>
+    <div id ="navbar">
+      <ul>
+	{% for c in chats%}
+ 	<li><a href="/enterchat?chat={{c}}">{{ c }}</a></li>
+	{% endfor %}
+      </ul>
+    </div>
+    {%end block%}
+
+
+    <h1>Welcome to {{ title }} </h1>
+    <p> Current time is {% now "F j Y H:i"%}</p>
+
+    <% block pagecontent %}
+    <p> This is a template text. If u'r seeing this in a page rendered by chat
+        , something is wrong. </p>
+
+    {% endblock %}
+  </body>
+</html>
