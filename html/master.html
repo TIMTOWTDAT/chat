@@ -1,3 +1,4 @@
+{% autoescape true %}
 <html>
   <head>
     <title>{{ title }} </title>
@@ -5,7 +6,7 @@
   <body>
 
     {% block navbar%}
-    	<h3>Available Chats</h3>
+    <h3>Available Chats</h3>
     <div id ="navbar">
       <ul>
 	{% for c in chats%}
@@ -13,16 +14,17 @@
 	{% endfor %}
       </ul>
     </div>
-    {%end block%}
+    {% endblock %}
 
 
     <h1>Welcome to {{ title }} </h1>
-    <p> Current time is {% now "F j Y H:i"%}</p>
-
-    <% block pagecontent %}
+    <p> Current time is {{ current_time.strftime("%H:%M") }}</p>
+    
+    {% block pagecontent %}
     <p> This is a template text. If u'r seeing this in a page rendered by chat
         , something is wrong. </p>
 
     {% endblock %}
   </body>
 </html>
+{% endautoescape %}

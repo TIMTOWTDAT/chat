@@ -1,0 +1,12 @@
+{% extends "master.html" %}
+
+{% block pagecontent %}
+
+<p> Last 20 messages as of {{ current_time.strftime("%Y-%m-%d %H:%M") }}</p>
+
+{% for m in msg_list %}
+<p><b>({{ m.chat }})</b> ({{ m.deltatime }} seconds ago) {{ m.user }}: {{ m.message|escape }} </p>
+
+{% endfor %}
+    
+{% endblock %}

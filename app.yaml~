@@ -8,6 +8,7 @@ handlers:
 - url: /assets
   static_dir: assets
 
+- url: /html
 
 - url: /favicon\.ico
   static_files: favicon.ico
